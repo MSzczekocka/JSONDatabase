@@ -20,7 +20,7 @@ public class RequestAnalyzer {
                 arrayGetter.getStringFromArray(database, position);
                 return "OK";
             case "delete":
-                arrayCleaner.deleteCellInArray(database, position);
+                arrayCleaner.deleteValueInArray(database, position);
                 return "OK";
             default:
                 return "ERROR";

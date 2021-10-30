@@ -87,3 +87,9 @@
 /.gradle/buildOutputCleanup/outputFiles.bin
 /JSON Database/task/out/production/classes/client/StatusGetter.class
 /.idea/uiDesigner.xml
+/JSON Database/task/out/production/classes/server/methods/ArrayCleaner.class
+/JSON Database/task/out/production/classes/server/array/ArrayController.class
+/JSON Database/task/out/production/classes/server/methods/ArrayGetter.class
+/JSON Database/task/out/production/classes/server/methods/ArraySetter.class
+/JSON Database/task/out/production/classes/server/request/ClientDataAnalyzer.class
+/JSON Database/task/out/production/classes/server/request/RequestAnalyzer.class

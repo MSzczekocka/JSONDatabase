@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StatusGetter {
 
-    public String getStatus(){
+    public String getUserRequest() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

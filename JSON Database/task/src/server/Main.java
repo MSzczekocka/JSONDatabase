@@ -13,8 +13,8 @@ public class Main {
 
         String[] database = arrayController.createArray();
 
-        String[] request = clientDataAnalyzer.getCommand("get 1");
-        System.out.println(requestAnalyzer.analyzeRequest(database,request));
+        String[] request = clientDataAnalyzer.getCommand("get 4");
+        requestAnalyzer.analyzeRequest(database,request);
 
 
     }

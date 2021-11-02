@@ -4,12 +4,18 @@ import server.methods.ArrayCleaner;
 import server.methods.ArrayGetter;
 import server.methods.ArraySetter;
 
+import java.util.Objects;
+
 public class RequestAnalyzer {
     public String[] analyzeRequest(String[] database, String[] request) {
         ArrayCleaner arrayCleaner = new ArrayCleaner();
         ArrayGetter arrayGetter = new ArrayGetter();
         ArraySetter arraySetter = new ArraySetter();
 
+
+        if (request[0].equals("exit")){
+            return database;
+        }
         int position = Integer.parseInt(request[1]);
         if (position == 505) {
             System.out.println("ERROR");

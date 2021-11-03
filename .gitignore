@@ -262,3 +262,5 @@
 /JSON Database/task/build/classes/java/main/client/request/StatusGetter.class
 /JSON Database/task/out/production/classes/client/request/StatusGetter.class
 /JSON Database/task/build/test-results/test/TEST-ClientRequestAnalyzer.xml
+/JSON Database/task/out/production/classes/client/request/RequestAnalyzer.class
+/JSON Database/task/out/production/classes/client/request/RequestModifier.class

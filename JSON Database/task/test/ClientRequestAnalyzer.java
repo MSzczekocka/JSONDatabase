@@ -21,7 +21,7 @@ public class ClientRequestAnalyzer {
         //when
         String result = requestAnalyzer.checkRequest(request);
         //then
-        Assert.assertEquals("Wrong content",result);
+        Assert.assertEquals("More than one request",result);
     }
 
     @Test

@@ -4,8 +4,6 @@ import server.methods.ArrayCleaner;
 import server.methods.ArrayGetter;
 import server.methods.ArraySetter;
 
-import java.util.Objects;
-
 public class RequestAnalyzer {
     public String[] analyzeRequest(String[] database, String[] request) {
         ArrayCleaner arrayCleaner = new ArrayCleaner();

@@ -1,4 +1,4 @@
-package client;
+package client.request;
 
 import java.util.Scanner;
 
@@ -7,7 +7,6 @@ public class StatusGetter {
     public String getUserRequest() {
         String result = "";
         Scanner scanner = new Scanner(System.in);
-        result = scanner.nextLine();
 
         while (result.equals("")){
             System.out.print("> ");

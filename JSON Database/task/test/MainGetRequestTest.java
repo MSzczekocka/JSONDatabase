@@ -1,3 +1,4 @@
+import client.request.StatusGetter;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,7 +9,7 @@ public class MainGetRequestTest {
     @Test
     public void getClientRequestTest(){
         //given
-        client.StatusGetter statusGetter = new client.StatusGetter();
+        StatusGetter statusGetter = new StatusGetter();
         String request = "get 1";
         //when
         InputStream in = new ByteArrayInputStream(request.getBytes());

@@ -10,11 +10,8 @@ public class RequestAnalyzer {
         ArrayCleaner arrayCleaner = new ArrayCleaner();
         ArrayGetter arrayGetter = new ArrayGetter();
         ArraySetter arraySetter = new ArraySetter();
-
-        if(request[0].equals("exit")){
-            return database;
-        }
         int position = Integer.parseInt(request[1]);
+
         if (!clientDataAnalyzer.checkIndex(request)) {
             System.out.println("ERROR");
             return database;

@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ClientRequestAnalyzer {
+
     @Test
     public void wrongContentTest(){
         //given

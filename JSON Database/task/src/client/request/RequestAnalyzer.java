@@ -6,6 +6,9 @@ import java.util.stream.Stream;
 
 public class RequestAnalyzer {
     public String checkRequest(String request) {
+        if (isExit(request)) {
+            System.exit(0);
+        }
         if (!checkContent(request).equals("OK")) return checkContent(request);
         if (!checkDoubleRequest(request).equals("OK")) return checkDoubleRequest(request);
         if (!hasSpaces(request).equals("OK")) return hasSpaces(request);
@@ -15,6 +18,10 @@ public class RequestAnalyzer {
             if (!hasString(request).equals("OK")) return hasString(request);
         }
         return "OK";
+    }
+
+    private static boolean isExit(String request){
+        return request.equals("exit");
     }
 
     private static String checkContent(String request) {

@@ -14,11 +14,14 @@ public class Main {
         RequestAnalyzer requestAnalyzer = new RequestAnalyzer();
         RequestModifier requestModifier = new RequestModifier();
         StatusGetter statusGetter = new StatusGetter();
+        String request ="";
 
-        String request = statusGetter.getUserRequest();
-        String[] requestA = requestModifier.getModifiedRequest(request);
+        while(!request.equals("exit")){
+            request = statusGetter.getUserRequest();
+            String[] requestA = requestModifier.getModifiedRequest(request);
 
-        String[] database = arrayController.createArray();
-        database = requestAnalyzer.analyzeRequest(database,requestA);
+            String[] database = arrayController.createArray();
+            database = requestAnalyzer.analyzeRequest(database,requestA);
+        }
     }
 }

@@ -6,16 +6,16 @@ import server.methods.ArraySetter;
 
 public class RequestAnalyzer {
     public String[] analyzeRequest(String[] database, String[] request) {
+        ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
         ArrayCleaner arrayCleaner = new ArrayCleaner();
         ArrayGetter arrayGetter = new ArrayGetter();
         ArraySetter arraySetter = new ArraySetter();
 
-
-        if (request[0].equals("exit")){
+        if(request[0].equals("exit")){
             return database;
         }
         int position = Integer.parseInt(request[1]);
-        if (position == 505) {
+        if (!clientDataAnalyzer.checkIndex(request)) {
             System.out.println("ERROR");
             return database;
         }
@@ -27,10 +27,10 @@ public class RequestAnalyzer {
             case "get":
                 System.out.println(arrayGetter.getStringFromArray(database, position));
                 return database;
-            case "delete" :
+            case "delete":
                 System.out.println("OK");
                 return arrayCleaner.deleteValueInArray(database, position);
-            default :
+            default:
                 System.out.println("ERROR");
                 return database;
         }

@@ -4,74 +4,35 @@ import server.request.ClientDataAnalyzer;
 
 public class ClientDataAnalyzerTest {
     @Test
-    public void getCommand_setTest(){
+    public void checkIndex_okTest(){
         //given
         ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "set 1 HelloWorld!";
+        String[] request = {"set","45","Hi"};
         //when
-        String[] result = clientDataAnalyzer.getCommand(request);
+        boolean result = clientDataAnalyzer.checkIndex(request);
         //then
-        String[] expected = {"set","1","HelloWorld!"};
-        Assert.assertArrayEquals(expected,result);
+        Assert.assertTrue(result);
     }
 
     @Test
-    public void getCommand_OutOfRangeSetTest(){
+    public void checkIndex_nokTest(){
         //given
         ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "set 125 HelloWorld!";
+        String[] request = {"set","56783","Hi"};
         //when
-        String[] result = clientDataAnalyzer.getCommand(request);
+        boolean result = clientDataAnalyzer.checkIndex(request);
         //then
-        String[] expected = {"set","505","HelloWorld!"};
-        Assert.assertArrayEquals(expected,result);
+        Assert.assertFalse(result);
     }
 
     @Test
-    public void getCommand_getTest(){
+    public void checkIndex_nok2Test(){
         //given
         ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "get 57";
+        String[] request = {"set","-4","Hi"};
         //when
-        String[] result = clientDataAnalyzer.getCommand(request);
+        boolean result = clientDataAnalyzer.checkIndex(request);
         //then
-        String[] expected = {"get","57"};
-        Assert.assertArrayEquals(expected,result);
-    }
-
-    @Test
-    public void getCommand_outOfRangeGetTest(){
-        //given
-        ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "get 189";
-        //when
-        String[] result = clientDataAnalyzer.getCommand(request);
-        //then
-        String[] expected = {"get","505"};
-        Assert.assertArrayEquals(expected,result);
-    }
-
-    @Test
-    public void getCommand_deleteTest(){
-        //given
-        ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "delete 100";
-        //when
-        String[] result = clientDataAnalyzer.getCommand(request);
-        //then
-        String[] expected = {"delete","100"};
-        Assert.assertArrayEquals(expected,result);
-    }
-
-    @Test
-    public void getCommand_outOfRangeDeleteTest(){
-        //given
-        ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
-        String request = "delete 505";
-        //when
-        String[] result = clientDataAnalyzer.getCommand(request);
-        //then
-        String[] expected = {"delete","505"};
-        Assert.assertArrayEquals(expected,result);
+        Assert.assertFalse(result);
     }
 }

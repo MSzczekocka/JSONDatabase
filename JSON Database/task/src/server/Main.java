@@ -17,7 +17,7 @@ public class Main {
         String[] database = arrayController.createArray();
         String request ="";
 
-        while(!request.equals("exit")){
+        while(true){
             request = statusGetter.getUserRequest();
             String[] requestA = requestModifier.getModifiedRequest(request);
             database = requestAnalyzer.analyzeRequest(database,requestA);

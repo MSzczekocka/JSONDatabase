@@ -79,3 +79,10 @@
 /JSON Database/Network connection/task-remote-info.yaml
 /JSON Database/100-cell database/task-remote-info.yaml
 /.idea/vcs.xml
+/JSON Database/task/out/production/classes/server/Arraycreator.class
+/.gradle/7.1.1/executionHistory/executionHistory.bin
+/.gradle/7.1.1/fileHashes/fileHashes.bin
+/JSON Database/task/out/production/classes/client/Main.class
+/JSON Database/task/out/production/classes/server/Main.class
+/.gradle/buildOutputCleanup/outputFiles.bin
+/JSON Database/task/out/production/classes/client/StatusGetter.class

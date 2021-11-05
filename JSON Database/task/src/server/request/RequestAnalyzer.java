@@ -5,25 +5,31 @@ import server.methods.ArrayGetter;
 import server.methods.ArraySetter;
 
 public class RequestAnalyzer {
-    public String analyzeRequest(String[] database, String[] request) {
+    public String[] analyzeRequest(String[] database, String[] request) {
+        ClientDataAnalyzer clientDataAnalyzer = new ClientDataAnalyzer();
         ArrayCleaner arrayCleaner = new ArrayCleaner();
         ArrayGetter arrayGetter = new ArrayGetter();
         ArraySetter arraySetter = new ArraySetter();
-        int position = Integer.getInteger(request[1]);
-        if (position == 505) return "ERROR";
+        int position = Integer.parseInt(request[1]);
+
+        if (!clientDataAnalyzer.checkIndex(request)) {
+            System.out.println("ERROR");
+            return database;
+        }
 
         switch (request[0]) {
             case "set":
-                arraySetter.setStringToArray(database, position, request[2]);
-                return "OK";
+                System.out.println("OK");
+                return arraySetter.setStringToArray(database, position, request[2]);
             case "get":
-                arrayGetter.getStringFromArray(database, position);
-                return "OK";
+                System.out.println(arrayGetter.getStringFromArray(database, position));
+                return database;
             case "delete":
-                arrayCleaner.deleteValueInArray(database, position);
-                return "OK";
+                System.out.println("OK");
+                return arrayCleaner.deleteValueInArray(database, position);
             default:
-                return "ERROR";
+                System.out.println("ERROR");
+                return database;
         }
     }
 }

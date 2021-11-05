@@ -1,10 +1,10 @@
-package server;
+package server.array;
 
 import java.util.Arrays;
 
-public class ArrayCreator {
+public class ArrayController {
 
-    protected String[] createArray() {
+    public String[] createArray() {
         String[] database = new String[100];
         Arrays.fill(database, "");
         return database;

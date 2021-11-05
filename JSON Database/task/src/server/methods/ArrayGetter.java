@@ -1,7 +1,7 @@
-package server;
+package server.methods;
 
 public class ArrayGetter {
-    protected String getStringFromArray(String[] arr, int position){
+    public String getStringFromArray(String[] arr, int position){
         boolean isPositionEmpty = checkPosition(arr,position);
         if (isPositionEmpty) return "ERROR";
         return arr[position];

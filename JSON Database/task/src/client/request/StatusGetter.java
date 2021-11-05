@@ -5,13 +5,19 @@ import java.util.Scanner;
 public class StatusGetter {
 
     public String getUserRequest() {
-        String result = "";
+        RequestAnalyzer requestAnalyzer = new RequestAnalyzer();
+        String request = "";
         Scanner scanner = new Scanner(System.in);
 
-        while (result.equals("")){
+        while (request.equals("")){
             System.out.print("> ");
-            result = scanner.nextLine();
+            request = scanner.nextLine();
+            String result = requestAnalyzer.checkRequest(request);
+            if(!result.equals("OK")){
+                System.out.println(result);
+                request = "";
+            }
         }
-        return result;
+        return request;
     }
 }

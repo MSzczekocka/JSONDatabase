@@ -7,10 +7,13 @@ import java.util.stream.Stream;
 public class RequestAnalyzer {
     public String checkRequest(String request) {
         if (!checkContent(request).equals("OK")) return checkContent(request);
+        if (!checkDoubleRequest(request).equals("OK")) return checkDoubleRequest(request);
         if (!hasSpaces(request).equals("OK")) return hasSpaces(request);
         if (!hasValue(request).equals("OK")) return hasValue(request);
         if (!isValueValid(request).equals("OK")) return isValueValid(request);
-        if (!hasString(request).equals("OK")) return hasString(request);
+        if(request.contains("set")){
+            if (!hasString(request).equals("OK")) return hasString(request);
+        }
         return "OK";
     }
 
@@ -24,6 +27,20 @@ public class RequestAnalyzer {
             }
         });
         return result.get();
+    }
+
+    private static String checkDoubleRequest(String request){
+        String[] okRequests = {"exit", "set", "get", "delete"};
+        int requests = 0;
+        for (String okRequest: okRequests){
+            if(request.contains(okRequest)){
+                requests++;
+            }
+        }
+        if (requests>1){
+            return "More than one request";
+        }
+        return "OK";
     }
 
     private static String hasSpaces(String request) {

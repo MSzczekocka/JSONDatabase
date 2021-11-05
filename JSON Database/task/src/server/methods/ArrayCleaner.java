@@ -1,8 +1,8 @@
 package server.methods;
 
 public class ArrayCleaner {
-    public String[] deleteCellInArray(String[] arr, int position){
-        arr[position] = "";
+    public String[] deleteValueInArray(String[] arr, int position){
+        arr[position-1] = "";
         return arr;
     }
 }

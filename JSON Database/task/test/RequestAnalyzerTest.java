@@ -55,18 +55,6 @@ public class RequestAnalyzerTest {
         Assert.assertEquals("",result[67]);
     }
 
-    @Test
-    public void analyzeRequest_ExitTest(){
-        //given
-        RequestAnalyzer requestAnalyzer = new RequestAnalyzer();
-        String[] testDatabase = createTestDatabase();
-        String[] request = {"exit"};
-        //when
-        String[] result = requestAnalyzer.analyzeRequest(testDatabase,request);
-        //then
-        Assert.assertArrayEquals(testDatabase,result);
-    }
-
     private static String[] createTestDatabase(){
         String[] testDatabase = new String[100];
         Random rd = new Random();
